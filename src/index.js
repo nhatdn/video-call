@@ -1,3 +1,7 @@
-import bar from "./bar.js";
+import share from "./share.js";
 
-bar();
+share();
+
+// import bar from "./bar.js";
+
+// bar();

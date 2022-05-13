@@ -4,17 +4,23 @@
     <meta charset="utf-8" />
   </head>
   <style>
+    video {
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+
     #local,
     #remote {
       width: 300px;
-      height: 230px;
+      height: 250px;
       border: 1px solid rgb(83, 83, 83);
     }
   </style>
   <body>
-    <p>Hello world</p>
+    <p>Share screen</p>
     <input type="text" id="another-peers-id" />
     <button id="call">Call</button>
+    <button id="share">Share</button>
 
     <div>
       <video id="local"></video>

@@ -4,8 +4,7 @@ const another = document.getElementById("another-peers-id");
 const call = document.getElementById("call");
 
 function openStream() {
-  const config = { audio: true, video: true };
-
+  const config = { audio: false, video: true };
   return navigator.mediaDevices.getUserMedia(config);
 }
 
@@ -21,7 +20,6 @@ export default function bar() {
   //caller
   call.addEventListener("click", () => {
     const id = another.value;
-    console.log(id);
     openStream().then((stream) => {
       playStream("local", stream);
       const call = peer.call(id, stream);
@@ -30,6 +28,7 @@ export default function bar() {
   });
   // callee
   peer.on("call", (call) => {
+    console.log(call);
     openStream().then((stream) => {
       call.answer(stream);
       playStream("local", stream);
